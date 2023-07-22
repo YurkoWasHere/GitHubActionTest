@@ -1,4 +1,4 @@
-name: Three Jobs Workflow
+name: Three Jobs Workflow2
 on:
   push:
     branches:
