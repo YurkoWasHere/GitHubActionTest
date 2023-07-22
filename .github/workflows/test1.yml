@@ -15,7 +15,8 @@ jobs:
         matrix_var: [matrix_job_1_1, matrix_job_1_2, matrix_job_1_3] # Add your matrix values here
     steps:
       - name: Job 1
-        run: echo "This is Job 1 - Matrix: ${{ matrix.matrix_var }}"
+        run: echo "This is Job 1" ; sleep 120
+        
 
   job2:
     runs-on: ubuntu-latest
@@ -24,8 +25,8 @@ jobs:
         matrix_var: [matrix_job_2_1, matrix_job_2_2, matrix_job_2_3] # Add your matrix values here
     steps:
       - name: Job 2
-        run: echo "This is Job 2 - Matrix: ${{ matrix.matrix_var }}"
-
+        run: echo "This is Job 2" ; sleep 120
+        
   job3:
     runs-on: ubuntu-latest
     strategy:
@@ -33,4 +34,4 @@ jobs:
         matrix_var: [matrix_job_3_1, matrix_job_3_2, matrix_job_3_3] # Add your matrix values here
     steps:
       - name: Job 3
-        run: echo "This is Job 3 - Matrix: ${{ matrix.matrix_var }}"
+        run: echo "This is Job 3" ; sleep 120
