@@ -1,4 +1,4 @@
-name: Three Jobs Workflow2
+name: Three Jobs Workflow
 on:
   push:
     branches:
@@ -31,7 +31,6 @@ jobs:
     strategy:
       matrix:
         matrix_var: [matrix_job_3_1, matrix_job_3_2, matrix_job_3_3] # Add your matrix values here
-        
     steps:
       - name: Job 3
         run: echo "This is Job 3 - Matrix: ${{ matrix.matrix_var }}"
