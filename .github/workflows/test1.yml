@@ -14,7 +14,7 @@ jobs:
       - name: Job 1      
         run: |
           set -x
-          git checkout https://github.com/YurkoWasHere/GitHubActionTest.git
+          git clone https://github.com/YurkoWasHere/GitHubActionTest.git
           cd GitHubActionTest
           git checkout test3
           echo " TEST 123  " >test3
