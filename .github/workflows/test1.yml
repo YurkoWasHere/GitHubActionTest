@@ -6,7 +6,11 @@ on:
 
 concurrency:
   group: my-unique-concurrency-group
-
+  
+permissions:
+  pages: write      # to deploy to Pages
+  id-token: write   # to verify the deployment originates from an appropriate source
+  
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -18,8 +22,10 @@ jobs:
           cd GitHubActionTest
           git checkout test3
           echo " TEST 123  " >test3
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+          path: $GITHUB_WORKSPACE/GitHubActionTest
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2 # or the latest "vX.X.X" version tag for this action
