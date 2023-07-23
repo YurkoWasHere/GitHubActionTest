@@ -18,6 +18,8 @@ jobs:
           cd GitHubActionTest
           git checkout test3
           echo " TEST 123  " >test3
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
           git add .
           git commit -m "test1"
           git push
